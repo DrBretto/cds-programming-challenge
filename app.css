@@ -1,17 +1,18 @@
-/* Your styles should be mobile-first and responsive */
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
 
-/** 
-  * If you are unclear on how to utilize a mobile-first, responsive technique to write your CSS, here is an example: 
-  *
-  * https://github.com/andreacardybailey/responsive_example/blob/master/styles/responsive-base.css 
-  *
-*/
+.tel {
+  text-decoration: none;
+  color: orange;
+}
 
 
-
-
-div {  
-  border: 2px solid black;  
+div {
+  border: 2px solid black;
   justify-content: space-evenly;
   display: flex;
   width: 420px;
@@ -30,7 +31,7 @@ div.questions {
 div.answers {
   height: 50;
   display: flex;
-  justify-content: space-evenly;  
+  justify-content: space-evenly;
 }
 
 h1 {
@@ -57,9 +58,7 @@ html {
   background-color: rgb(230, 98, 98);
 }
 
-
 @media all AND (min-width: 600px) {
-
   div {
     width: auto;
   }
@@ -68,5 +67,4 @@ html {
     width: 500px;
     height: auto;
   }
-
 }
