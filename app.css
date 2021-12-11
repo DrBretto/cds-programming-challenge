@@ -14,24 +14,54 @@ form {
   color: orange;
 }
 
-.error {
+.req {
   color: red;
-  font-size: 10px;
+  font-weight: bold;
 }
 
-.bold{
+.bold {
   font-size: 14px;
   font-weight: bold;
 }
 
-.italic{
+.italic {
   font-style: italic;
 }
 
-input.invalid, textarea.invalid, label.invalid{
-	border: 2px solid red;
+.note {
+  font-size: smaller;
+  font-style: italic;
 }
 
-input.valid, textarea.valid{
-	border: 2px solid green;
+input.invalid,
+textarea.invalid {
+  border: 2px solid red;
+}
+
+input.valid,
+textarea.valid {
+  border: 2px solid green;
+}
+
+.error {
+  color: red;
+  display: inline;
+}
+
+span.invalid {
+  display: inline;
+  color: red;
+}
+span.valid,
+span.hidden {
+  display: none;
+  color: green;
+}
+
+div.unsuccessful {
+  display: none;
+}
+
+div.success {
+  border: 2px solid green;
 }

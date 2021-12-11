@@ -13,41 +13,57 @@
 <body>
   <header>
     <img src="./img/header.JPG" class="center"></img>
-    <h1>Contact Details</h1>
   </header>
   <main>
-
+    
   <form id"form">
-    <label for="firstName" class="bold">First Name: </label>
+    <h1>Contact Details</h1>
+    <label for="firstName" class="bold">First Name</label>
+    <span class="req">*</span>
     <input type="text" id="firstName" name="firstName" maxlength="30" required>
-    <br>
-    <label for="lastName" class="bold">Last Name: </label>
+    <span class="hidden">-First name required</span><br>
+
+    <label for="lastName" class="bold">Last Name:</label>
+    <span class="req">*</span>
     <input type="text" id="lastName" name:"lastName" maxlength="30" required>
+    <span class="hidden">-Last name required</span>
     <br>
-    <label for="phone">Phone: </label> 
+
+    <label for="phone">Phone:</label>
+    <span class="req">*</span>
     <input type="text" id="phone" name="phone" maxlength="30" required>
+    <span class="hidden">-Valid phone# required</span>
     <br>
-    <label for="email" class="italic">Email: </label>
+
+    <label for="email" class="italic">Email:</label>
+    <span class="req">*</span>
     <input type="text" id="email" name="email" maxlength="50" required>
+    <span class="hidden">-Valid email required</span>
     <br>
-    <span class="error">* required </span>
+    <span class="note" >(email required in order to receive an email
+      confirmation) </span>
     <br>
+
     <label for="promo">Promo Code: </label>
     <input type="text" id="promo" name="promo" maxlength="7">
+    <span class="hidden">-Alphanumeric characters only</span>
     <br>
     
     <label for="howDidYouHear">How did you hear?</label>
     <select id="howDidYouHear" name="howDidYouHear">
+      <option default selected value>-- Select an option --</option>
       <option value="socialMedia">Social Media</option>
       <option value="fromAFriend">From a friend</option>
       <option value="email">Email</option>
       <option value="other">Other</option>
-    </select> <br>
+    </select>
+    <span class="hidden">-Selection required if no promo code entered</span><br>
 
     <input type="checkbox" id="terms" name="terms" value="terms">
-    <label for="terms">I agree to the terms and conditions of this event.</label><br>
+    <label for="terms">I agree to the Terms and Conditions of this event.</label>
+    <span class="hidden">-Must accept Terms and Conditions</span><br>
 
-    <div class="hidden">
+    <div>
       <ul>
         <li>All cancellation requests must be received by March 1, 2022</li>
         <li>All cancellation requests are subject to a $100 cancellation fee.</li>
@@ -55,9 +71,13 @@
       </ul>
     </div>
 
-    <input type="submit">
-
   </form>
+
+
+  <div id="successBox" class="unsuccessful">
+    Testing!!!
+  </div>
+
 
   </main>
   <footer class="center">
