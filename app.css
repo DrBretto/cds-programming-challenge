@@ -19,12 +19,19 @@ form {
   font-size: 10px;
 }
 
-#first,
-#last {
+.bold{
   font-size: 14px;
   font-weight: bold;
 }
 
-#emailInput {
+.italic{
   font-style: italic;
+}
+
+input.invalid, textarea.invalid, label.invalid{
+	border: 2px solid red;
+}
+
+input.valid, textarea.valid{
+	border: 2px solid green;
 }
