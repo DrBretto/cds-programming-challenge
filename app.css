@@ -53,9 +53,9 @@ span.invalid {
   color: red;
 }
 span.valid,
-span.hidden {
+span.hidden,
+div.hidden {
   display: none;
-  color: green;
 }
 
 div.unsuccessful {

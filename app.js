@@ -1,7 +1,7 @@
 function validateAll() {
   let numberValid = $(".valid").length;
   console.log(numberValid);
-  if (numberValid === 8) {
+  if (numberValid === 7) {
     $("#successBox").removeClass("unsuccessful").addClass("success");
   } else {
     $("#successBox").removeClass("success").addClass("unsuccessful");
@@ -18,7 +18,6 @@ $(document).ready(function () {
         .removeClass("hidden")
         .removeClass("invalid")
         .addClass("valid");
-      validateAll();
     } else {
       input
         .next()
@@ -26,6 +25,7 @@ $(document).ready(function () {
         .removeClass("valid")
         .addClass("invalid");
     }
+    validateAll();
   });
 
   $("#lastName").on("input", function () {
@@ -77,15 +77,15 @@ $(document).ready(function () {
         .removeClass("hidden")
         .removeClass("invalid")
         .addClass("valid");
-      } else {
-        input
+    } else {
+      input
         .next()
         .removeClass("hidden")
         .removeClass("valid")
         .addClass("invalid");
-      }
-      validateAll();
-    });
+    }
+    validateAll();
+  });
 
   $("#promo").on("input", function () {
     let input = $(this);
@@ -99,9 +99,17 @@ $(document).ready(function () {
       if (promo.length > 0) {
         input
           .nextAll("#howDidYouHear")
+          .next()
           .removeClass("hidden")
           .removeClass("invalid")
           .addClass("valid");
+      } else if (!input.nextAll("#howDidYouHear").val()) {
+        input
+          .nextAll("#howDidYouHear")
+          .next()
+          .removeClass("hidden")
+          .removeClass("valid")
+          .addClass("invalid");
       }
     } else {
       input
@@ -116,6 +124,12 @@ $(document).ready(function () {
   $("#howDidYouHear").on("input", function () {
     let input = $(this);
     let howDidYouHear = input.val();
+    if (input.find(":selected").text() === "Other") {
+      input.next().removeClass("valid");
+      input.next().addClass("hidden");
+      input.next().next().next().removeClass("hidden");
+      input.next().next().next().find("#specify").val("");
+    } else input.next().next().next().removeClass("valid").addClass("hidden");
     if (howDidYouHear) {
       input
         .next()
@@ -125,6 +139,25 @@ $(document).ready(function () {
     } else if (!input.prevAll("#promo").val()) {
       input
         .next()
+        .removeClass("hidden")
+        .removeClass("valid")
+        .addClass("invalid");
+    }
+    validateAll();
+  });
+
+  $("#specify").on("input", function () {
+    let input = $(this);
+    let specify = input.val();
+    if (specify) {
+      input
+        .parent()
+        .removeClass("hidden")
+        .removeClass("invalid")
+        .addClass("valid");
+    } else {
+      input
+        .parent()
         .removeClass("hidden")
         .removeClass("valid")
         .addClass("invalid");
