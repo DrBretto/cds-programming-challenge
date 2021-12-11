@@ -1,3 +1,7 @@
+form {
+  font-size: 12px;
+}
+
 .center {
   display: block;
   margin-left: auto;
@@ -15,60 +19,12 @@
   font-size: 10px;
 }
 
-div {
-  border: 2px solid black;
-  justify-content: space-evenly;
-  display: flex;
-  width: 420px;
+#first,
+#last {
+  font-size: 14px;
+  font-weight: bold;
 }
 
-div.box {
-  display: block;
-  align-content: center;
-  align-self: center;
-}
-
-div.questions {
-  height: 100px;
-}
-
-div.answers {
-  height: 50;
-  display: flex;
-  justify-content: space-evenly;
-}
-
-h1 {
-  text-align: center;
-  width: 100%;
-  color: #ffffff;
-  background-color: #000;
-  letter-spacing: 2px;
-}
-
-html {
-  display: flex;
-  justify-content: space-evenly;
-  align-content: center;
-  vertical-align: auto;
-  align-self: center;
-}
-
-.correct {
-  background-color: rgb(66, 163, 82);
-}
-
-.incorrect {
-  background-color: rgb(230, 98, 98);
-}
-
-@media all AND (min-width: 600px) {
-  div {
-    width: auto;
-  }
-
-  img {
-    width: 500px;
-    height: auto;
-  }
+#emailInput {
+  font-style: italic;
 }
