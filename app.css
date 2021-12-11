@@ -1,0 +1,72 @@
+/* Your styles should be mobile-first and responsive */
+
+/** 
+  * If you are unclear on how to utilize a mobile-first, responsive technique to write your CSS, here is an example: 
+  *
+  * https://github.com/andreacardybailey/responsive_example/blob/master/styles/responsive-base.css 
+  *
+*/
+
+
+
+
+div {  
+  border: 2px solid black;  
+  justify-content: space-evenly;
+  display: flex;
+  width: 420px;
+}
+
+div.box {
+  display: block;
+  align-content: center;
+  align-self: center;
+}
+
+div.questions {
+  height: 100px;
+}
+
+div.answers {
+  height: 50;
+  display: flex;
+  justify-content: space-evenly;  
+}
+
+h1 {
+  text-align: center;
+  width: 100%;
+  color: #ffffff;
+  background-color: #000;
+  letter-spacing: 2px;
+}
+
+html {
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+  vertical-align: auto;
+  align-self: center;
+}
+
+.correct {
+  background-color: rgb(66, 163, 82);
+}
+
+.incorrect {
+  background-color: rgb(230, 98, 98);
+}
+
+
+@media all AND (min-width: 600px) {
+
+  div {
+    width: auto;
+  }
+
+  img {
+    width: 500px;
+    height: auto;
+  }
+
+}
