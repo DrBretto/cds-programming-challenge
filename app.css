@@ -10,6 +10,10 @@
   color: orange;
 }
 
+.error {
+  color: red;
+  font-size: 10px;
+}
 
 div {
   border: 2px solid black;

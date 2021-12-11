@@ -16,15 +16,25 @@
 
   </header>
   <main>
-<p>
 
-  <form>
-    First Name: <input type="text" maxlength="30"><br>
-    Last Name: <input type="text" maxlength="30"><br>
-    Phone: <input type="text" maxlength="30"><br>
-    Email: <input type="text" maxlength="50"><br>
-    <span class="req">* required </span><br>
-    Promo Code: <input type="text" maxlength="7"><br>
+    <form>
+    <label for="firstName">First Name: </label>
+    <input type="text" id="firstName" name="firstName" maxlength="30">
+    <br>
+    <label for="lastName">Last Name: </label>
+    <input type="text" id="lastName" name:"lastName" maxlength="30">
+    <br>
+    <label for="phone">Phone: </label> 
+    <input type="text" id="phone" name="phone" maxlength="30">
+    <br>
+    <label for="email">Email: </label>
+    <input type="text" id="email" name="email" maxlength="50" required>
+    <br>
+    <span class="error">* required </span>
+    <br>
+    <label for="promo">Promo Code: </label>
+    <input type="text" id="promo" name="promo" maxlength="7">
+    <br>
     
     <label for="howDidYouHear">How did you hear?</label>
     <select id="howDidYouHear" name="howDidYouHear">
@@ -35,25 +45,24 @@
     </select> <br>
 
     <input type="checkbox" id="terms" name="terms" value="terms">
-<label for="terms">I agree to the terms and conditions of this event.</label><br>
+    <label for="terms">I agree to the terms and conditions of this event.</label><br>
 
-    <ul>
-      <li>All cancellation requests must be received by March 1, 2022</li>
-      <li>All cancellation requests are subject to a $100 cancellation fee.</li>
-      <li>No one under the age of 16 will be allowed on the show floor.</li>
-    </ul>
+    <div class="hidden">
+      <ul>
+        <li>All cancellation requests must be received by March 1, 2022</li>
+        <li>All cancellation requests are subject to a $100 cancellation fee.</li>
+        <li>No one under the age of 16 will be allowed on the show floor.</li>
+      </ul>
+    </div>
 
+    <input type="submit">
 
   </form>
-
-  Make the Accept Terms & Conditions a link that pops up a box with the following text:
-
-</p>
 
   </main>
   <footer class="center">
     <p class="center">For assistance please call 
-      <a class="tel" href="tel:555-5555">555-5555</a> or email 
+      <a class="tel" href="tel:555-5555">555-5555</a> or
       <a class="email" href="mailto:test@test.com">Email Us</a>
     </p>
   </footer>  
