@@ -32,13 +32,13 @@
     <label for="phone">Phone:</label>
     <span class="req">*</span>
     <input type="text" id="phone" name="phone" maxlength="30" required>
-    <span class="hidden">-Valid phone# required</span>
+    <span class="hidden">*phone# required</span>
     <br>
 
     <label for="email" class="italic">Email:</label>
     <span class="req">*</span>
     <input type="text" id="email" name="email" maxlength="50" required>
-    <span class="hidden">-Valid email required</span>
+    <span class="hidden">*Valid email required</span>
     <br>
     <span class="note" >(email required in order to receive an email
       confirmation) </span>
@@ -62,7 +62,7 @@
     <div class="hidden">
       <label for="specify">Please Specify: </label>
       <span class="req">*</span>
-      <input type="text" id="specify" name="specify">
+      <input type="text" id="specify" name="specify" maxlength="255">
       <span class="hidden">*required</span>
     </div>
 
@@ -78,15 +78,12 @@
         <li>No one under the age of 16 will be allowed on the show floor.</li>
       </ul>
     </div>
-
   </form>
-
 
   <div id="successBox" class="unsuccessful">
     <h2>Success!</h2>
     <p>Congratulations! You have cracked the not-so-secret combination. 
   </div>
-
 
   </main>
   <footer class="center">

@@ -13,9 +13,11 @@ $(document).ready(function () {
     let input = $(this);
     let firstName = input.val();
     if (firstName) {
-      input.next().removeClass("hidden").addClass("valid");
+      input.next().addClass("hidden");
+      input.addClass("valid");
     } else {
-      input.next().removeClass("hidden").removeClass("valid");
+      input.next().removeClass("hidden");
+      input.removeClass("valid");
     }
     validateAll();
   });
@@ -24,19 +26,26 @@ $(document).ready(function () {
     let input = $(this);
     let lastName = input.val();
     if (lastName) {
-      input.next().removeClass("hidden").addClass("valid");
+      input.next().addClass("hidden");
+      input.addClass("valid");
     } else {
-      input.next().removeClass("hidden").removeClass("valid");
+      input.next().removeClass("hidden");
+      input.removeClass("valid");
     }
     validateAll();
   });
 
   $("#phone").on("input", function () {
     let input = $(this);
+    let phone = input.val();
     input.val(input.val().replace(/[^0-9]/g, ""));
     if (phone) {
+      input.next().addClass("hidden");
       input.addClass("valid");
-    } else input.removeClass("valid");
+    } else {
+      input.next().removeClass("hidden");
+      input.removeClass("valid");
+    }
     validateAll();
   });
 
@@ -46,9 +55,11 @@ $(document).ready(function () {
       /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     let is_email = re.test(input.val());
     if (is_email) {
-      input.next().removeClass("hidden").addClass("valid");
+      input.next().addClass("hidden");
+      input.addClass("valid");
     } else {
-      input.next().removeClass("hidden").removeClass("valid");
+      input.next().removeClass("hidden");
+      input.removeClass("valid");
     }
     validateAll();
   });
@@ -58,18 +69,11 @@ $(document).ready(function () {
     let promo = input.val();
     input.val(input.val().replace(/[^0-9a-zA-Z]/g, ""));
     if (promo.length > 0) {
-      input
-        .nextAll("#howDidYouHear")
-        .next()
-        .removeClass("hidden")
-        .addClass("valid");
+      input.nextAll("#howDidYouHear").addClass("valid");
+      input.nextAll("#howDidYouHear").next().addClass("hidden");
     } else if (!input.nextAll("#howDidYouHear").val()) {
-      console.log(input.nextAll("#howDidYouHear").val());
-      input
-        .nextAll("#howDidYouHear")
-        .next()
-        .removeClass("hidden")
-        .removeClass("valid");
+      input.nextAll("#howDidYouHear").removeClass("valid");
+      input.nextAll("#howDidYouHear").next().removeClass("hidden");
     }
     validateAll();
   });
@@ -78,14 +82,20 @@ $(document).ready(function () {
     let input = $(this);
     let howDidYouHear = input.val();
     if (howDidYouHear) {
-      input.next().removeClass("hidden").addClass("valid");
+      input.addClass("valid");
+      input.next().addClass("hidden");
     } else if (!input.prevAll("#promo").val()) {
-      input.next().removeClass("hidden").removeClass("valid");
+      input.removeClass("valid");
+      console.log("remove validation here");
+      input.next().removeClass("hidden");
     }
     if (input.find(":selected").text() === "Other") {
-      input.next().removeClass("valid").addClass("hidden");
+      input.removeClass("valid");
+      input.next().addClass("hidden");
       input.next().next().next().removeClass("hidden").find("#specify").val("");
-    } else input.next().next().next().removeClass("valid").addClass("hidden");
+    } else {
+      input.next().next().next().addClass("hidden");
+    }
     validateAll();
   });
 
@@ -94,10 +104,10 @@ $(document).ready(function () {
     let specify = input.val();
     if (specify.length > 0) {
       input.next().addClass("hidden");
-      input.parent().prev().prev().removeClass("hidden").addClass("valid");
+      $("#howDidYouHear").addClass("valid");
     } else {
       input.next().removeClass("hidden");
-      input.parent().prev().prev().removeClass("valid").addClass("hidden");
+      $("#howDidYouHear").removeClass("valid");
     }
     validateAll();
   });
@@ -120,9 +130,11 @@ $(document).ready(function () {
     let terms = input.is(":checked");
     console.log(terms);
     if (terms) {
-      input.next().next().removeClass("hidden").addClass("valid");
+      input.addClass("valid");
+      input.next().next().addClass("hidden");
     } else {
-      input.next().next().removeClass("hidden").removeClass("valid");
+      input.removeClass("valid");
+      input.next().next().removeClass("hidden");
     }
     validateAll();
   });
