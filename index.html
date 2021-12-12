@@ -66,11 +66,12 @@
     </div>
 
     <input type="checkbox" id="terms" name="terms" value="terms">
-    <label for="terms">I agree to the Terms and Conditions of this event.</label>
+    <label for="terms">I agree to the<span id="termsLink"> Terms and Conditions </span>of this event.</label>
     <span class="hidden">-Must accept Terms and Conditions</span><br>
 
-    <div>
+    <div id="popup" class="hidden">
       <ul>
+        <h2>Terms and Conditions:</h2>
         <li>All cancellation requests must be received by March 1, 2022</li>
         <li>All cancellation requests are subject to a $100 cancellation fee.</li>
         <li>No one under the age of 16 will be allowed on the show floor.</li>
@@ -81,7 +82,8 @@
 
 
   <div id="successBox" class="unsuccessful">
-    Testing!!!
+    <h2>Success!</h2>
+    <p>Congratulations! You have cracked the not-so-secret combination. 
   </div>
 
 

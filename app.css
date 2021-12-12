@@ -1,5 +1,21 @@
+footer {
+  position: absolute;
+  width: 80vw;
+  top: 90vh;
+  left: 10vw;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 form {
   font-size: 12px;
+  width: 80vw;
+  margin-left: auto;
+}
+
+h2 {
+  text-align: center;
 }
 
 .center {
@@ -31,16 +47,7 @@ form {
 .note {
   font-size: smaller;
   font-style: italic;
-}
-
-input.invalid,
-textarea.invalid {
-  border: 2px solid red;
-}
-
-input.valid,
-textarea.valid {
-  border: 2px solid green;
+  color: black;
 }
 
 .error {
@@ -48,14 +55,19 @@ textarea.valid {
   display: inline;
 }
 
-span.invalid {
+span {
   display: inline;
   color: red;
 }
+
 span.valid,
 span.hidden,
 div.hidden {
   display: none;
+}
+
+#termsLink {
+  color: blue;
 }
 
 div.unsuccessful {
@@ -64,4 +76,22 @@ div.unsuccessful {
 
 div.success {
   border: 2px solid green;
+}
+
+#popup {
+  position: absolute;
+  width: 60vw;
+  color: white;
+  border: 2px solid black;
+  background-color: rgba(50, 50, 50, 50);
+  border-radius: 2vh;
+}
+
+#successBox {
+  position: relative;
+  margin: auto;
+  width: 60vw;
+  background-color: green;
+  border-radius: 5px;
+  border: 2px solid black;
 }
