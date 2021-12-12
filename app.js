@@ -57,7 +57,6 @@ $(document).ready(function () {
     let input = $(this);
     let promo = input.val();
     input.val(input.val().replace(/[^0-9a-zA-Z]/g, ""));
-
     if (promo.length > 0) {
       input
         .nextAll("#howDidYouHear")
@@ -94,9 +93,11 @@ $(document).ready(function () {
     let input = $(this);
     let specify = input.val();
     if (specify.length > 0) {
+      input.next().addClass("hidden");
       input.parent().prev().prev().removeClass("hidden").addClass("valid");
     } else {
-      input.parent().prev().prev().removeClass("valid");
+      input.next().removeClass("hidden");
+      input.parent().prev().prev().removeClass("valid").addClass("hidden");
     }
     validateAll();
   });
